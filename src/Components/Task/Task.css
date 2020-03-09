@@ -1,0 +1,11 @@
+.Task{
+    width: 100%;
+    margin: 10px 0px;
+    background-color: white;
+    border-top: 2px solid purple;
+    border-radius: 0 0 5px 5px ;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}

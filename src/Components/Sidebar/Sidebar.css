@@ -1,0 +1,7 @@
+.Container {
+    width: 10%;
+    height: 100%;
+    background-color: #414856;
+    padding: 20px 0;
+    box-sizing: border-box;
+}

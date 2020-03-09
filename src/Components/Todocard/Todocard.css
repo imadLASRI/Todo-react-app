@@ -1,0 +1,8 @@
+.Todocard{
+    width: 30%;
+    height: 85%;
+    margin: 3% 2% 2% 2%;
+    background-color: lightgrey;
+    border-radius: 10px;
+    box-shadow: 0px 2px 15px 0px #00000063;
+}
