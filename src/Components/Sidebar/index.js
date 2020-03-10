@@ -17,15 +17,27 @@ const Logo = styled.div`
 
 const SideNav = styled.div`
     width: 100%;
-    height: 50px;
-    margin-bottom: 10px; 
+    height: 10%;
+    margin-bottom: 40px;
     background-image: url('${ props => props.img}');
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
     cursor: pointer;
+    color: white;
+    position: relative;
+
+    &:hover{
+        color: grey;
+    }
 `;
 
+const SideLabelContainer = styled.div`
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 105%;
+`;
 
 const SideLabel = styled.h1`
     margin-bottom: 40px;
@@ -33,12 +45,7 @@ const SideLabel = styled.h1`
     font-weight: normal;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    color: white;
-    cursor: pointer;
-
-    &:hover{
-        color: grey;
-    }
+    color: inherit;
 `;
 
 const Sidebar = () => {
@@ -47,10 +54,29 @@ const Sidebar = () => {
         <div className="Sidebar">
             <a href="#"><Logo /></a>
 
-            <SideNav img="img/tasks.png" /><SideLabel>Tasks</SideLabel>
-            <SideNav img="img/inprogress.png" /><SideLabel>Inprogress</SideLabel>
-            <SideNav img="img/completed.png" /><SideLabel>Completed</SideLabel>
-            <SideNav img="img/addtask.png" /><SideLabel>New Task</SideLabel>
+            <SideNav img="img/tasks.png" >
+                <SideLabelContainer>
+                    <SideLabel>Tasks</SideLabel>
+                </SideLabelContainer>
+            </SideNav>
+
+            <SideNav img="img/inprogress.png" >
+                <SideLabelContainer>
+                    <SideLabel>Inprogress</SideLabel>
+                </SideLabelContainer>
+            </SideNav>
+
+            <SideNav img="img/completed.png" >
+                <SideLabelContainer>
+                    <SideLabel>Completed</SideLabel>
+                </SideLabelContainer>
+            </SideNav>
+
+            <SideNav img="img/addtask.png" >
+                <SideLabelContainer>
+                    <SideLabel>New Task</SideLabel>
+                </SideLabelContainer>
+            </SideNav>
         </div>
     );
 }

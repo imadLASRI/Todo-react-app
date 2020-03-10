@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import './Todocard.css';
@@ -41,7 +41,7 @@ const Todocard = ( props ) => {
             <TaskContainer>
                 {props.todos.map( task => {
                     return (
-                        (task.status == props.status) && <Task key={task.id}>{task.todo}</Task>
+                        (task.status == props.status) && <Task borderColor={props.color} key={task.id}>{task.todo}</Task>
                     );
                 })}
             </TaskContainer>

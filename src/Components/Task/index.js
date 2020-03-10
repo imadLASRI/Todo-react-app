@@ -8,7 +8,7 @@ import './Task.css';
 const Task = (props) => {
 
     return (
-        <div className="Task">
+        <div className="Task" style={{ borderTop: '2px solid ' + props.borderColor }}>
             {props.children}
         </div>
 
