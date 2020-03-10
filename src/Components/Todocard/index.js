@@ -39,7 +39,7 @@ const Todocard = ( props ) => {
             </CardHeader>
 
             <TaskContainer>
-                {props.todos.map( task => {
+                {props.tasks.map( task => {
                     return (
                         (task.status == props.status) && 
                             <Task 
@@ -47,10 +47,10 @@ const Todocard = ( props ) => {
                                 borderColor={props.color} 
                                 deadline={task.deadline} 
                                 status={task.status}
-                                
+
                                 thisTask={task}
-                                tasks={props.todos}
-                                setTasks={props.setTodos}
+                                tasks={props.tasks}
+                                setTasks={props.setTasks}
                             />
                     );
                 })}

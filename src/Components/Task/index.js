@@ -41,7 +41,11 @@ const Task = (props) => {
     return (
         <div className="Task" style={{ borderTop: '2px solid ' + props.borderColor }}>
             <TaskContainer>
-                <Checkmark type="checkbox" checked={props.status == 'done' ? true : false} onChange={ () => handleStatusChange(props.thisTask.id) } />
+                <Checkmark 
+                    type="checkbox" 
+                    checked={props.status == 'done' ? true : false} 
+                    onChange={ () => handleStatusChange(props.thisTask.id) }
+                    />
                 {props.thisTask.todo}
             </TaskContainer>
 

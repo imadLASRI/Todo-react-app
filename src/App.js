@@ -21,11 +21,11 @@ function App( ) {
         <Navbar />
 
         <div className="CardsContainer">
-          <Todocard todos={tasks} setTodos={setTasks} title="Todo" status="new" color="#4caf50"/>
+          <Todocard tasks={tasks} setTasks={setTasks} title="Todo" status="new" color="#4caf50"/>
 
-          <Todocard todos={tasks} setTodos={setTasks} title="Doing" status="ongoing" color="#ff9800"/>
+          <Todocard tasks={tasks} setTasks={setTasks} title="Doing" status="ongoing" color="#ff9800"/>
 
-          <Todocard todos={tasks} setTodos={setTasks} title="Done" status="done"/>
+          <Todocard tasks={tasks} setTasks={setTasks} title="Done" status="done"/>
         </div>
       </div>
 
