@@ -26,9 +26,20 @@ const SideNav = styled.div`
     cursor: pointer;
     color: white;
     position: relative;
+    opacity: ${props => (props.notYet) ? '0.2' : '1'};
 
     &:hover{
         color: grey;
+        animation: ${props => (!props.notYet) ? 'pop 0.3s ease-in-out infinite alternate'  : '' };
+    }
+
+    @keyframes pop {
+        0%{
+            opacity: 1;
+        }
+        100%{
+            opacity: 0.1;
+        }
     }
 `;
 
@@ -48,33 +59,37 @@ const SideLabel = styled.h1`
     color: inherit;
 `;
 
-const Sidebar = () => {
+const Sidebar = (props) => {
+
+    const handleNewtaskClick = () => {
+        props.addTask[1](!props.addTask[0]);
+    }
 
     return (
         <div className="Sidebar">
             <a href="#"><Logo /></a>
 
-            <SideNav img="img/tasks.png" >
+            <SideNav img="img/addtask.png" onClick={ handleNewtaskClick }>
+                <SideLabelContainer>
+                    <SideLabel>New Task</SideLabel>
+                </SideLabelContainer>
+            </SideNav>
+
+            <SideNav img="img/tasks.png" notYet>
                 <SideLabelContainer>
                     <SideLabel>Tasks</SideLabel>
                 </SideLabelContainer>
             </SideNav>
 
-            <SideNav img="img/inprogress.png" >
+            <SideNav img="img/inprogress.png" notYet>
                 <SideLabelContainer>
                     <SideLabel>Inprogress</SideLabel>
                 </SideLabelContainer>
             </SideNav>
 
-            <SideNav img="img/completed.png" >
+            <SideNav img="img/completed.png" notYet>
                 <SideLabelContainer>
                     <SideLabel>Completed</SideLabel>
-                </SideLabelContainer>
-            </SideNav>
-
-            <SideNav img="img/addtask.png" >
-                <SideLabelContainer>
-                    <SideLabel>New Task</SideLabel>
                 </SideLabelContainer>
             </SideNav>
         </div>

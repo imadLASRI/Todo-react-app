@@ -23,8 +23,8 @@ const Navbar = () => {
  
             <div style={{ display: 'flex' }}>
                 {/* Temporary UI material */}
-                <input type="text" placeholder="Search Tasks"/>
-                <label style={{ marginLeft: '20px' }}>Connected User Name & LOGO</label>
+                    {/* <input type="text" placeholder="Search Tasks"/>
+                    <label style={{ marginLeft: '20px' }}>Connected User Name & LOGO</label> */}
             </div>
         </div>
 

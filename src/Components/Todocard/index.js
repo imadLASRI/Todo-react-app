@@ -54,6 +54,8 @@ const Todocard = ( props ) => {
                             />
                     );
                 })}
+
+                {props.children}
             </TaskContainer>
         </div>
     );

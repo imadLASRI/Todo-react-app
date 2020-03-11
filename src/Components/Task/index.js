@@ -17,7 +17,7 @@ const TaskContainer = styled.div`
     display: flex;
     width: 100%;
     align-items: center;
-
+    text-decoration: ${props => (props.status == 'done') ? 'line-through' : 'none'};
 `;
 
 const Checkmark = styled.input`
@@ -40,7 +40,7 @@ const Task = (props) => {
 
     return (
         <div className="Task" style={{ borderTop: '2px solid ' + props.borderColor }}>
-            <TaskContainer>
+            <TaskContainer status={props.status}>
                 <Checkmark 
                     type="checkbox" 
                     checked={props.status == 'done' ? true : false} 
