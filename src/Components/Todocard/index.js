@@ -10,6 +10,7 @@ const CardHeader = styled.div`
     height: 35px;
     background-color: ${props => (props.color) ? props.color : '#5a8df5' };
     border-radius: 5px 5px 0 0;
+    user-select: none;
 `;
 
 const CardHeaderTitle = styled.h1`
@@ -39,6 +40,8 @@ const Todocard = ( props ) => {
             </CardHeader>
 
             <TaskContainer>
+                {props.children}
+
                 {props.tasks.map( task => {
                     return (
                         (task.status == props.status) && 
@@ -54,8 +57,6 @@ const Todocard = ( props ) => {
                             />
                     );
                 })}
-
-                {props.children}
             </TaskContainer>
         </div>
     );

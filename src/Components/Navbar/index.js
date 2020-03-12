@@ -11,6 +11,7 @@ const NavbarTitle = styled.h1`
     font-weight: normal;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+    user-select: none;
 `;
 
 const Navbar = () => {

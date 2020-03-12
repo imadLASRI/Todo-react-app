@@ -11,6 +11,7 @@ const Deadline = styled.span`
     font-weight: bold;
     font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
 `;
 
 const TaskContainer = styled.div`
@@ -25,6 +26,11 @@ const Checkmark = styled.input`
     height: 20px;
     margin-right: 5px;
     cursor: pointer;
+`;
+
+const TodoContainer = styled.p`
+    max-width: 85%;
+    user-select: none;
 `;
 
 const Task = (props) => {
@@ -46,7 +52,11 @@ const Task = (props) => {
                     checked={props.status == 'done' ? true : false} 
                     onChange={ () => handleStatusChange(props.thisTask.id) }
                     />
-                {props.thisTask.todo}
+
+                    <TodoContainer>
+                        {props.thisTask.todo}
+                    </TodoContainer>
+                    
             </TaskContainer>
 
             <Deadline>

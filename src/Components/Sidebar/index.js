@@ -12,7 +12,7 @@ const Logo = styled.div`
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
-
+    user-select: none;
 `;
 
 const SideNav = styled.div`
@@ -27,6 +27,7 @@ const SideNav = styled.div`
     color: white;
     position: relative;
     opacity: ${props => (props.notYet) ? '0.2' : '1'};
+    user-select: none;
 
     &:hover{
         color: grey;
@@ -61,15 +62,11 @@ const SideLabel = styled.h1`
 
 const Sidebar = (props) => {
 
-    const handleNewtaskClick = () => {
-        props.addTask[1](!props.addTask[0]);
-    }
-
     return (
         <div className="Sidebar">
             <a href="#"><Logo /></a>
 
-            <SideNav img="img/addtask.png" onClick={ handleNewtaskClick }>
+            <SideNav img="img/addtask.png" onClick={ () => props.addTask[1](!props.addTask[0]) }>
                 <SideLabelContainer>
                     <SideLabel>New Task</SideLabel>
                 </SideLabelContainer>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useSpring, animated } from 'react-spring';
 
 import './Addtodo.css';
 
@@ -9,6 +10,7 @@ const Todoform = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: inherit;
 `;
 
 const FormInput = styled.input`
@@ -64,6 +66,13 @@ const ErrorLabel = styled.span`
 
 const Addtodo = (props) => {
 
+    const shouldFadeIn = props.display[0];
+
+    const fade = useSpring({
+        width: shouldFadeIn ? "100%": "0%",
+        display: shouldFadeIn ? "flex": "none"
+    })
+
     const [formError, setFormError] = useState(false);
 
     const handleFormSubmit = (e) => {
@@ -101,16 +110,19 @@ const Addtodo = (props) => {
     }
 
     return (
-        <div className="Addtodo" style={{ display: (props.display[0]) ? 'flex' : 'none' }}>
-            <Todoform onSubmit={ handleFormSubmit } autocomplete="off">
-                <ErrorLabel shown={ formError } >Please fill all fields !</ErrorLabel>
+        <animated.div style={fade} >
+            <div className="Addtodo" >
+                <Todoform onSubmit={ handleFormSubmit } autocomplete="off">
+                    <ErrorLabel shown={ formError } >Please fill all fields !</ErrorLabel>
 
-                <FormInput placeholder="What ToDo.." name="todo" onChange={ handleInputChange } />
-                <FormInput placeholder="Task dead Line" name="deadline" onChange={ handleInputChange } />
+                    <FormInput placeholder="What ToDo.." name="todo" onChange={ handleInputChange } />
+                    <FormInput type="text" maxlength="10" placeholder="Task dead Line" name="deadline" onChange={ handleInputChange } />
 
-                <Submit>Add Task</Submit>
-            </Todoform>
-        </div>
+                    <Submit>Add Task</Submit>
+                </Todoform>
+            </div>
+        </animated.div>
+
     );
 }
 
